@@ -26,7 +26,8 @@
 		$password = htmlspecialchars($password);
 		
 		$exists = false;
-		$query = "SELECT username, password, cod_user FROM login WHERE username='$username'";
+		$query = "SELECT * FROM users WHERE username='$username'";
+		echo $query;
 		$result = mysqli_query($con, $query);
 		$num_rows = mysqli_num_rows($result);
 		if($num_rows > 0){
@@ -34,7 +35,6 @@
 			while($row = mysqli_fetch_array($result)){
 			    if(password_verify($password, $row['password'])){
 				$cod = $row['cod_user'];
-				$nivel = $row['nivel'];
 				$exists = true;
 			    }
 			}
@@ -44,7 +44,7 @@
 		    session_start();
 		    $_SESSION['login'] = $username;
 		    $_SESSION['user_id'] = $cod;
-		    header("Location: gamepage.php");
+		    header("Location: index.php");
 		}else{
 		    session_start();
 		    $_SESSION['login'] = "";
@@ -55,16 +55,23 @@
 
 <body>
 	<div id="container">
-		<div id="register">
-			<div class="logo"></div>
-			SIGN IN
-			<form action="login.php" method="post">		
-				<ul>
-					<li><input type="text"  id="user"/></li>
-					<li><input type="password" id="password" /></li>
-				</ul>
-			</form>
-		</div>
-	</div>
+        <div id="register">
+        <form action="login.php" method="post" autocomplete="off">
+            <header>
+                <div class="logo"></div>
+                <h1>SIGN UP</h1>
+                <p>Register to the best Strategy game on the interWebs</p>
+            </header>
+            <label for="username">Username</label>
+            <input id="username" class="form-control" type="text" name="username"/>
+            
+            <label for="password">Password</label>
+            <input id="password" class="form-control" type="password" name="password"/>
+            
+            <input type="submit" class="btnLogin btn-large-primary btn-large" value="Submit">
+                <?php echo $error ?>
+        </form>
+        </div>
+    </div>
 </body>
 </html>
