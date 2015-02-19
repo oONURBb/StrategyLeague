@@ -58,6 +58,16 @@ body{
     font-size: 75%;
 }
 
+#register input[type=submit] {
+    margin-top: 5px;
+}
+
+#error {
+    font-size: 75%;
+    text-align: center;
+    color: red;
+}
+
 .form-control {
     display: block;
     box-sizing: border-box;

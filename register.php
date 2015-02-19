@@ -5,25 +5,6 @@
         header("index.php", true);
     }
     session_destroy();
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        if($_POST['password'] == $_POST['repeatpassword']){
-            echo "test";
-            $con = mysqli_connect("localhost", "root", "", "strategyleague");
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
-            
-            $queryInsert = "INSERT INTO users (username, password, email, enabled, tipo) VALUES $username, $password, $email, 0, user";
-            
-            mysqli_query($con, $queryInsert);
-            mysqli_close($con);
-            
-        }else{
-            $error = "Repeat Password is wrong";
-        }
-    
-    }
-    
     
 ?>
 <!DOCTYPE html>
@@ -31,6 +12,14 @@
 <head>
     <title>Strategy League - Register</title>
     <link href="mystyle.css" rel="stylesheet">
+    <script src="Scripts/jquery-1.11.2.js"></script>
+    <script>
+        function updateError(string) {
+            $(document).ready(function(){
+                document.getElementById("error").innerHTML = string;
+            })
+        }
+    </script>
 </head>
 <body>
     <div id="container">
@@ -54,7 +43,39 @@
             <input id="email" class="form-control" type="email" name="email"/>
             
             <input type="submit" value="Submit">
-                <?php echo $error ?>
+                <?php
+                if($_SERVER['REQUEST_METHOD'] == "POST"){
+                    if($_POST['password'] == $_POST['repeatpassword']){
+                        $con = mysqli_connect("localhost", "root", "", "strategyleague");
+                        $username = $_POST['username'];
+                        $password = $_POST['password'];
+                        $password = password_hash($password, PASSWORD_DEFAULT);
+                        $email = $_POST['email'];
+                        
+                        $query = "SELECT * FROM users WHERE username = '$username'";
+                        
+                        $res = mysqli_query($con, $query);
+                        
+                        if(mysqli_num_rows($res) < 1){
+                            
+                            $query = "INSERT INTO users(username, password, email,enabled, tipo) VALUES ('$username', '$password', '$email', 0, 'user')";
+                            
+                            $res = mysqli_query($con, $query);
+                            echo "<script type='text/javascript'>updateError('Registado com Sucesso');</script>";
+            
+                        }else{
+                            echo "<script type='text/javascript'>updateError('Ja existe um jogador com esse username');</script>";
+                        }
+                        
+                        
+                        mysqli_close($con);
+                    }else{
+                        echo "<script type='text/javascript'>updateError('Repeat Password is wrong');</script>";
+                    }
+                
+                }
+                ?>
+            <div id="error"></div>
         </form>
         </div>
     </div>
