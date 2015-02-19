@@ -42,3 +42,34 @@ body{
     border-radius: 5px;
 }
 
+#register header {
+    text-align: center;
+}
+
+#register header > h1{
+    font-size: 130%;
+}
+
+#register header > p{
+    font-size: 75%;
+}
+
+#register label {
+    font-size: 75%;
+}
+
+.form-control {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 6px 12px;
+    border: 1px solid #CCC;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+

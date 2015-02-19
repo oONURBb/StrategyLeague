@@ -1,0 +1,36 @@
+Tema:
+League of Legends
+
+Descrição:
+O nosso jogo consiste em integrar o tema de league of legends e passar a um gênero de estratégia.
+Os champions são avatar que irão ser escolhidos na criação da conta, cada champion têm diferentes status de inicio (AP, AD, SPEED, ARMOR, MR). A currency utilizada no jogo vai ser "IP" e a premium currency "RP" vai ser e as tropas vão consistir nos minions, jungle minions, dragon e baron.
+Os edificios vão ser:
+Loja - Serve como centro de pesquisas(utiliza IP ou RP)
+Summoners - Para apanhar recursos.
+Nexus - Edificio Principal onde se encontram os Summoners
+Inibitors - Edificio para construir tropas (minions)
+Torres - Muralha
+
+Tropas:
+Melee Minions
+Caster Minions
+Siege Minions
+Super Minions
+Poro
+
+Loja:
+Research Melee Minions
+Research Caster Minions
+Research Siege Minions
+Research Super Minions
+Research Poro
+
+Normalização:
+Users(cod_users(PK), username, password, email, enabled, tipo);
+Atributos(cod_atr(PK),cod_users(FK), AP, AD, SPEED, ARMOR, MR, IP, RP);
+Edificios(cod_edif(PK), nome, descricao, nivel, atr, APnec, ADnec, SPEEDnec, ARMORnec, MRnec);
+Edificios_Users(cod_edif(FK), cod_users(FK));
+Tropas(cod_tropa(PK), nome, descricao, custoIP, custoRP);
+Tropas_Users(cod_tropa(FK), cod_users(FK));
+Researches(cod_research(PK), cod_tropa(FK), custoIP, custoRP);
+Researches_Users(cod_research(FK), cod_users(FK));
