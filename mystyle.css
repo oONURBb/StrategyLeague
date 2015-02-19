@@ -68,6 +68,55 @@ body{
     border: 1px solid #CCC;
 }
 
+/*btnLogin
+{
+    width: 210px;
+    color: #222;
+    border-color: #FDEABA #BF712C #B66521 #EDBD6E;
+    background-position: 50% -878px;
+    background: url("Images/lol-textures.jpg") no-repeat scroll 50% -846px #D79922;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 3px;
+    width: auto;
+    font-family: "Adobe Garamond Pro",Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 20px 4px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}*/
+
+.btnLogin
+{
+    width: 180px;
+    display: block;
+    font-size: 14px;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+
+.btn-large-primary, .btn-large-primary:visited {
+    color: #222;
+    border-color: #F6C653 #BD6A23 #B6631F #E8AB4A;
+    background: url("Images/lol-textures.jpg") no-repeat scroll 50% -846px #D79922;
+}
+
+.btn-large, .btn-large:visited
+{
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Adobe Garamond Pro",Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 20px 4px;
+    text-align: center;
+}
+
 label {
     display: inline-block;
     margin-bottom: 5px;
