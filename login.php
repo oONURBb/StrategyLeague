@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Untitled</title>
+	<title>Strategy League - Login</title>
 	<link href="mystyle.css" rel="stylesheet" />
+	<link rel="prerender" href="index.php">
 </head>
 
 <?php
@@ -47,7 +48,7 @@
 		}else{
 		    session_start();
 		    $_SESSION['username'] = "";
-		    $error = "Username ou Password errados";
+		    echo "<script type='text/javascript'>updateError('Username ou Password errados');</script>";
 		}
 	}
 ?>
@@ -68,7 +69,7 @@
             <input id="password" class="form-control" type="password" name="password"/>
             
             <input type="submit" class="btnLogin btn-large-primary btn-large" value="Submit">
-                <?php echo $error ?>
+	<div id="error"></div>
         </form>
         </div>
     </div>
