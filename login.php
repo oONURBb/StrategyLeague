@@ -27,7 +27,6 @@
 		
 		$exists = false;
 		$query = "SELECT * FROM users WHERE username='$username'";
-		echo $query;
 		$result = mysqli_query($con, $query);
 		$num_rows = mysqli_num_rows($result);
 		if($num_rows > 0){
