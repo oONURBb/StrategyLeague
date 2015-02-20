@@ -42,12 +42,12 @@
 		if($exists == true)
 		{
 		    session_start();
-		    $_SESSION['login'] = $username;
+		    $_SESSION['username'] = $username;
 		    $_SESSION['user_id'] = $cod;
 		    header("Location: index.php");
 		}else{
 		    session_start();
-		    $_SESSION['login'] = "";
+		    $_SESSION['username'] = "";
 		    $error = "Username ou Password errados";
 		}
 	}

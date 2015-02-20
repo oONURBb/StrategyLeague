@@ -1,19 +1,31 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Untitled</title>
+	<?php
+		session_start();
+		$username = $_SESSION["username"];
+		if($_SESSION["username"] === null)
+			header("Location: login.php");
+	?>
+	<title>StrategyLeague</title>
+	<link href="mystyle.css" rel="stylesheet" />
 </head>
 
 <body>
-
-<p>Está logado!</p>
-
-<?php
-	session_start();
-	$userid = $_SESSION["user_id"];
-	if($_SESSION["user_id"] === null)
-		header("Location: login.php");
-?>
+	
+	<div id="charInfo">
+		<div id="avatar">
+			
+		</div>
+		<p id="lblUsername"><?php echo $username?> (<a href="login.php">Log Out</a>)</p>
+		<div class="quebra"></div>
+	</div>
+	
+	<div id="atr">
+		
+	</div>
+	
+	<div id="game"></div>
 
 </body>
 </html>

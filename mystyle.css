@@ -13,6 +13,11 @@ body{
     width: 100%;
 }
 
+.quebra
+{
+    clear: both;
+}   
+
 .logo{
     width: 240px;
     height: 100px;
@@ -78,27 +83,6 @@ body{
     border: 1px solid #CCC;
 }
 
-/*btnLogin
-{
-    width: 210px;
-    color: #222;
-    border-color: #FDEABA #BF712C #B66521 #EDBD6E;
-    background-position: 50% -878px;
-    background: url("Images/lol-textures.jpg") no-repeat scroll 50% -846px #D79922;
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 3px;
-    width: auto;
-    font-family: "Adobe Garamond Pro",Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 6px 20px 4px;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-}*/
-
 .btnLogin
 {
     width: 180px;
@@ -125,6 +109,64 @@ body{
     text-decoration: none;
     padding: 6px 20px 4px;
     text-align: center;
+}
+
+#charInfo{
+    float: right;
+    margin-right: 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: black;
+    padding: 5px 10px 5px 10px;  
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: rgba(0,0,0,0.6);
+}
+
+#avatar{
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    background: url("Images/ViSquare.png");
+    background-size: 30px 30px;
+    float: left;
+}
+
+#lblUsername{
+    float: left;
+    margin-left: 10px;  
+}
+
+#lblUsername a{
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#atr{
+    padding: 5px 10px 5px 10px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 0px 0px 8px 8px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    width: 500px;
+    margin: 0 auto; 
+    height: 50px;
+}
+
+#game
+{
+    width: 70%;
+    height: 40%;    
+    padding: 5px 10px 5px 10px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 0px 0px 8px 8px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    margin: 100px auto; 
 }
 
 label {
