@@ -42,7 +42,7 @@
             <label for="email">E-mail</label>
             <input id="email" class="form-control" type="email" name="email"/>
             
-            <input type="submit" value="Submit">
+            <input type="submit" class="btnLogin btn-large-primary btn-large" value="Submit">
                 <?php
                 if($_SERVER['REQUEST_METHOD'] == "POST"){
                     if($_POST['password'] == $_POST['repeatpassword']){

@@ -33,6 +33,7 @@ body{
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    clear: both;
 }
 
 #register{
@@ -87,11 +88,12 @@ body{
 
 .btnLogin
 {
-    width: 180px;
+    width: 150px;
     display: block;
     font-size: 14px;
     margin-bottom: auto;
     margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-large-primary, .btn-large-primary:visited {
@@ -113,9 +115,16 @@ body{
     text-align: center;
 }
 
+/* INDEX PAGE */
+
+#header{
+    min-width: 700px;
+}
+
 #charInfo{
     float: right;
-    margin-right: 30px;
+    height: 40px;
+    width: 175px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: black;
@@ -146,28 +155,32 @@ body{
     cursor: pointer;
 }
 
-#atr{
-    padding: 5px 10px 5px 10px;
+#atr{  
     background-color: rgba(0,0,0,0.6);
     border-radius: 0px 0px 8px 8px;
     border-bottom: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid white;
     width: 500px;
-    margin: 0 auto; 
+    text-align: center;
     height: 50px;
+    margin: 0 auto;
+}
+
+.atr{
+    display: inline-block;
+    font-size: 85%;
 }
 
 /*#game
 {
-    width: 70%;
-    height: 40%;    
+    width: 678px;
+    height: 40%;
+
     padding: 5px 10px 5px 10px;
     background-color: rgba(0,0,0,0.6);
-    border-radius: 0px 0px 8px 8px;
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    /*border-radius: 0px 0px 8px 8px;*/
+    border: 1px solid white;
     margin: 100px auto; 
 }*/
 
