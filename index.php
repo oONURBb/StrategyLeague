@@ -25,7 +25,9 @@
 		
 	</div>
 	
-	<div id="game"></div>
+	<div id="game">
+		<div id="game-top"></div>
+	</div>
 
 </body>
 </html>
